@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: telegram-bot-api
+    env: docker
+    region: virginia  # Change to your preferred region
+    plan: pro         # Change to your preferred plan
+    disk:
+      name: telegram-bot-api-data
+      mountPath: /app/data
+      sizeGB: 10
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
